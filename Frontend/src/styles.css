@@ -1,0 +1,46 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #d3f6ff;
+}
+
+.background-image {
+  /* Adjust background image styles */
+  background-image: url('https://images.squarespace-cdn.com/content/v1/55d5c0e4e4b0be109fd8762f/1603213649967-1F66KFKGT69IIO8S5H9C/IMG_0058%25281%2529.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 30%;
+  height: 300px; /* Adjust height as needed */
+}
+
+
+.content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.site-name {
+  font-size: 3rem;
+  color: #cbadad9b;
+}
+
+.quotations {
+  margin-top: 20px;
+}
+
+.get-started-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
