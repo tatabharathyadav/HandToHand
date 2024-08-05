@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 190, 122, 0); /* Semi-transparent background */
+    background-color: rgba(14, 190, 122, 0); 
     display: flex;
     justify-content: center;
     align-items: center;
