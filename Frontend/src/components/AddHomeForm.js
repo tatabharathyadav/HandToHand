@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles.css';
 
 const AddHomeForm = () => {
@@ -7,18 +8,38 @@ const AddHomeForm = () => {
   const [city, setCity] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [needsFood, setNeedsFood] = useState(false);
+  const [password, setPassword] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const checkDuplicate = async (name, city, address) => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/homes/check-duplicate', { name, city, address });
+      return response.data.exists;
+    } catch (error) {
+      console.error('Error checking duplicate', error);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setSuccessMessage('');
+    setErrorMessage('');
+
+    if (await checkDuplicate(name, city, address)) {
+      setErrorMessage('Home with this name, city, and address already exists.');
+      return;
+    }
 
     const newHome = {
       name,
       address,
       city,
       phoneNumber,
-      needsFood
+      needsFood,
+      password,
     };
 
     try {
@@ -39,6 +60,7 @@ const AddHomeForm = () => {
         setCity('');
         setPhoneNumber('');
         setNeedsFood(false);
+        setPassword('');
       } else {
         const errorData = await response.json();
         console.error('Error adding home:', errorData);
@@ -97,6 +119,16 @@ const AddHomeForm = () => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
           <label>
             Needs Food:
             <input
@@ -113,4 +145,3 @@ const AddHomeForm = () => {
 };
 
 export default AddHomeForm;
-

@@ -1,26 +1,33 @@
-const mongoose = require('mongoose');
+// backend/models/Home.js
 
-const HomeSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const HomeSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   address: {
     type: String,
-    required: true
+    required: true,
   },
   city: {
     type: String,
-    required: true
-  }, 
+    required: true,
+  },
   phoneNumber: {
     type: String,
-    required: true
+    required: true,
   },
   needsFood: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('Home', HomeSchema);

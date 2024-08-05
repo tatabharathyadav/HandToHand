@@ -14,7 +14,7 @@ const LocationInput = () => {
     setError('');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/homes/${encodeURIComponent(city)}`);
+      const response = await fetch(`http://localhost:5000/api/homes/city/${encodeURIComponent(city)}`);
       if (!response.ok) {
         const { error } = await response.json();
         throw new Error(error || 'Failed to fetch homes');

@@ -1,3 +1,4 @@
+// src/components/HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles.css';
@@ -22,10 +23,11 @@ const HomePage = () => {
         {/* Button/link to navigate to the search page */}
         <Link to="/add-home" className="get-started-button">Add Your Home</Link>
         {/* Button/link to navigate to the add home form */}
+        <Link to="/login" className="get-started-button">Login to Update Home</Link>
+        {/* Button/link to navigate to the login page */}
       </div>
     </div>
   );
 };
 
 export default HomePage;
-

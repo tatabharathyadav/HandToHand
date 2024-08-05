@@ -1,15 +1,19 @@
+// src/CustomRouter.js
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import LocationInput from './components/LocationInput';
 import AddHomeForm from './components/AddHomeForm';
+import Login from './components/Login';
+import UpdateHomeStatus from './components/UpdateHomeStatus';
 
 const CustomRouter = () => {
   const routes = [
     { path: '/', component: HomePage, exact: true },
     { path: '/find-homes', component: LocationInput },
     { path: '/add-home', component: AddHomeForm },
-    // Add more routes as needed
+    { path: '/login', component: Login },
+    { path: '/update-home/:id', component: UpdateHomeStatus },
   ];
 
   return (
