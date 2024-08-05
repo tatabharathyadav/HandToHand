@@ -7,7 +7,7 @@ import '../styles.css';
 const Login = () => {
   const [homeName, setHomeName] = useState('');
   const [city, setCity] = useState('');
-  const [password, setPassword] = useState(''); // New password state
+  const [password, setPassword] = useState(''); 
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ homeName, city, password }), // Include password in the request
+        body: JSON.stringify({ homeName, city, password }),
       });
 
       if (response.ok) {
