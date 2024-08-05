@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Your custom styles
+import './index.css'; 
 import App from './App';
 
 
