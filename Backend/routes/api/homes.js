@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Home = require('../../models/Home');
 
-// GET homes by city
+
 // GET homes by city
 router.get('/city/:city', async (req, res) => {
   try {
@@ -84,4 +84,3 @@ router.post('/check-duplicate', async (req, res) => {
 });
 
 module.exports = router;
-

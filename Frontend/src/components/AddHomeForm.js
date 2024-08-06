@@ -79,7 +79,7 @@ const AddHomeForm = () => {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <form onSubmit={handleSubmit} className="add-home-form">
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Home Name:</label>
           <input
             type="text"
             id="name"

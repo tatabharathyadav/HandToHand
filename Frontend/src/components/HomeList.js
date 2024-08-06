@@ -38,7 +38,7 @@ const HomeList = ({ homes }) => {
       {modalOpen && (
         <Modal onClose={closeModal}>
           <h3>{selectedHome.name}</h3>
-          <p>{selectedHome.address}</p>
+          <p>Address:{selectedHome.address}</p>
           <p>Phone Number: {selectedHome.phoneNumber}</p>
           <button onClick={closeModal}>Close</button>
         </Modal>
